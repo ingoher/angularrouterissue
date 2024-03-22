@@ -1,0 +1,19 @@
+<button
+  mat-button
+  class="text-button"
+  [disabled]="disabled"
+  [class.disabled]="disabled"
+  [class.shallow]="shallow"
+  [class.activated]="activated"
+  [class.no-icon]="!iconSrc"
+  [ngClass]="classes"
+  [type]="type"
+  (click)="onButtonClick($event)"
+>
+  <div class="text-button-content">
+    <div class="text-button-icon">
+      <img *ngIf="iconSrc" [src]="iconSrc" alt="icon" />
+    </div>
+    <div class="text-button-text">{{ label }}</div>
+  </div>
+</button>

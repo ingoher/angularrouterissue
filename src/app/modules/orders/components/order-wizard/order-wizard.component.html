@@ -1,0 +1,16 @@
+<div #scrollContainer class="order-wizard">
+  <mystepper
+    class="order-wizard-stepper"
+    [steps]="orderSteps"
+    [activeStepPath]="activeStepPath"
+    [isFormValid]="orderWizardFormService.customerForm.valid"
+    (onStepChange)="navigateToStep($event.path)"
+  >
+  </mystepper>
+  <div class="order-wizard-content-wrapper">
+    <div class="order-wizard-stepper-content">
+      <router-outlet (activate)="scrollToTop()"></router-outlet>
+    </div>
+    <div class="footer"></div>
+  </div>
+</div>
